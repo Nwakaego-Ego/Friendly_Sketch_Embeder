@@ -1,0 +1,6 @@
+.app-container {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+}
