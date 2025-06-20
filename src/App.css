@@ -1,6 +1,17 @@
+body {
+  padding: 10px;
+}
+
 .app-container {
-  /* background-color: red; */
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
+}
+
+.embed-section {
+  display: flex;
+}
+
+.embed-code-wrapper {
+  margin-left: 56px;
+  margin-top: 28px;
 }

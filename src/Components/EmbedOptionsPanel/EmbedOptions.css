@@ -1,0 +1,67 @@
+.embed-option-container {
+  background-color: #f6f6f6;
+  width: 340px;
+  height: 52px;
+  margin-top: 20px;
+  display: flex;
+  margin-left: 28px;
+  border-radius: 4px;
+}
+
+.iframe-mood {
+  display: inline-block;
+  width: 170px;
+  height: 38px;
+  background-color: white;
+  border-radius: 4px;
+  position: relative;
+  top: 8px;
+  bottom: 8px;
+  left: 26px;
+  right: 143px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iframe-mood-button {
+  position: relative;
+  left: 28px;
+  right: 28px;
+  top: 12px;
+  bottom: 22px;
+  width: 137px;
+  height: 38px;
+  /* background-color: white; */
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.fa-CaretUp {
+  position: relative;
+  left: 20px;
+  top: 2px;
+}
+
+.editable-mood-button {
+  display: inline-block;
+  width: 170px;
+  height: 38px;
+  background-color: white;
+  border-radius: 4px;
+  position: relative;
+  top: 8px;
+  bottom: 8px;
+  left: 76px;
+  right: 143px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
