@@ -1,20 +1,15 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import DropDownMenuOptions from "../DropDownOptions/DropDownMenuOptions";
 import "./EmbedOptions.css";
 
-const EmbedOptionsPanel = ({ label, value }) => {
+const EmbedOptions = ({ label, dropdown, value }) => {
   return (
     <>
       <div>
         <div className="embed-option-container">
           <div className="iframe-mood"> {label} </div>
+          <div className="value iframe-mood-button"> {value}</div>
           <div>
-            <button className="iframe-mood-button">
-              {" "}
-              {value}
-              <FontAwesomeIcon icon={faCaretUp} className="fa-CaretUp" />{" "}
-            </button>
+            <div className="iframe-mood-button "> {dropdown}</div>
           </div>
         </div>
       </div>
@@ -22,4 +17,4 @@ const EmbedOptionsPanel = ({ label, value }) => {
   );
 };
 
-export default EmbedOptionsPanel;
+export default EmbedOptions;

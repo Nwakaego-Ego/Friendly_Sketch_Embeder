@@ -1,9 +1,11 @@
 import React from "react";
+import { generateInstanceEmbed } from "../../utils/EmbedUtils";
 import "./Preview.css";
 
 const Preview = ({ code }) => {
+  const instanceWrapper = generateInstanceEmbed(code);
   return (
-    <div className="">
+    <div>
       {" "}
       <iframe
         srcDoc={`
