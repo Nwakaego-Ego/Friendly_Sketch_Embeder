@@ -1,33 +1,42 @@
 import React, { useState } from "react";
 import { generateInstanceEmbed } from "../../utils/EmbedUtils";
 import "./EmbedCodeBox.css";
-const EmbedCodeBox = ({ code, embedMode }) => {
-  const [copied, setCopied] = useState(false);
 
-  let embedCode = "";
-  if (embedMode === "instance") {
-    embedCode = generateInstanceEmbed(code);
-  }
+const EmbedCodeBox = ({ code, setCopied, embedCode, label, handleCopy }) => {
+  // const [copied, setCopied] = useState(false);
 
-  console.log(generateInstanceEmbed(code));
+  // let embedCode = "";
+  // if (embedMode === "instance") {
+  //   embedCode = generateInstanceEmbed(code);
+  // }
 
-  console.log(embedCode);
+  // if (embedMode === "instance") {
+  //   embedCode = generateInstanceEmbed(code);
+  // } else if (embedMode === "global") {
+  //   embedCode = generateGlobalEmbed(code);
+  // } else {
+  //   embedCode = generateIframeEmbed(code);
+  // }
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(embedCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  // console.log(generateInstanceEmbed(code));
+
+  // console.log(embedCode);
+
+  // const handleCopy = () => {
+  //   navigator.clipboard.writeText(embedCode);
+  //   setCopied(true);
+  //   setTimeout(() => setCopied(false), 2000);
+  // };
 
   return (
     <div className="code-box">
       <textarea readOnly value={embedCode} rows="10" className="code-box" />
-      <button
+      {/* <button
         onClick={handleCopy}
         className="mt-2 px-4 py-2 bg-blue-600 text-white rounded"
       >
-        {copied ? "Copied!" : "Copy Code"}
-      </button>
+        {label}
+      </button> */}
     </div>
   );
 };

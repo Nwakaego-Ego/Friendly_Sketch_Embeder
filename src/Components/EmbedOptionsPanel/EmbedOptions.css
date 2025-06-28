@@ -65,3 +65,8 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+.drop-down-menu {
+  width: 500px !important;
+  background-color: red !important;
+}
