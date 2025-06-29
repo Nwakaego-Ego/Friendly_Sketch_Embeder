@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { generateInstanceEmbed } from "../../utils/EmbedUtils";
 import "./EmbedCodeBox.css";
 
-const EmbedCodeBox = ({ code, setCopied, embedCode, label, handleCopy }) => {
+const EmbedCodeBox = ({ embedCode }) => {
   // const [copied, setCopied] = useState(false);
 
   // let embedCode = "";
@@ -27,6 +27,8 @@ const EmbedCodeBox = ({ code, setCopied, embedCode, label, handleCopy }) => {
   //   setCopied(true);
   //   setTimeout(() => setCopied(false), 2000);
   // };
+
+  console.log(embedCode);
 
   return (
     <div className="code-box">

@@ -36,12 +36,12 @@ const EmbedOptions = ({ label, value, options, onChange }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        gap: 2,
+        gap: 1,
         bgcolor: "#f6f6f6",
         px: 2,
         py: 1,
         borderRadius: 2,
-        mt: 4,
+        mt: 2,
         width: "100%",
         maxWidth: 400,
       }}

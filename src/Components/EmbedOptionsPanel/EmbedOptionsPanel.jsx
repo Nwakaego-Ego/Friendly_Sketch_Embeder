@@ -73,10 +73,16 @@ const EmbedOptionsPanel = ({
   return (
     <Box sx={{ px: 2 }}>
       <EmbedOptions
-        label="Embed Mode"
-        value={mode}
-        options={["Instance", "Iframe", "Global"]}
-        onChange={setMode}
+        label={shouldRun ? "play" : "pause"}
+        value={shouldRun}
+        options={["Play", "Pause"]}
+        onChange={(value) => {
+          if (value === play) {
+            setShouldRun(true);
+          } else {
+            setShouldRun(false);
+          }
+        }}
       />
       <EmbedOptions
         label="Theme"
