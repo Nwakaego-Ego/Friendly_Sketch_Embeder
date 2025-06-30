@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import Editor from "./Components/EditorPreviewPanel/Editor";
 import Preview from "./Components/EditorPreviewPanel/Preview";
 import EmbedOptionsPanel from "./Components/EmbedOptionsPanel/EmbedOptionsPanel";
-// import EmbedCodeButtonsPanel from "./Components/EmbedCodeButtonsPanel/ModeButtonGroup";
 import EmbedCodeBox from "./Components/EmbedCodeButtonsPanel/EmbedCodeBox";
 import ModeButtonsGroup from "./Components/EmbedCodeButtonsPanel/ModeButtonsGroup";
 import {
@@ -27,12 +26,12 @@ function App() {
   }`);
   const [copied, setCopied] = useState(false);
 
-  // const [mode, setMode] = useState("Instance");
   // const [theme, setTheme] = useState("Dark");
   // const [asset, setAsset] = useState("Sound");
   // const [editable, setEditable] = useState(false);
 
   const embedCode = useMemo(() => {
+    if (!embedMode) return;
     if (embedMode === "instance") {
       return generateInstanceEmbed(code);
     } else if (embedMode === "global") {
@@ -40,15 +39,7 @@ function App() {
     } else {
       return generateIframeEmbed(code);
     }
-    return "";
   }, [embedMode, code]);
-
-  // const embedCode = useMemo(() => {
-  //   if (embedMode === "instance") {
-  //     return generateInstanceEmbed(code);
-  //   }
-  //   return "";
-  // }, [embedMode, code]);
 
   console.log(generateInstanceEmbed(code));
 
@@ -69,14 +60,14 @@ function App() {
       <div className="embed-section">
         <div className="embed-option-wrapper">
           {/* <EmbedOptionsPanel
-            mode={mode}
-            setMode={setMode}
             theme={theme}
             setTheme={setTheme}
             asset={asset}
             setAsset={setAsset}
             editable={editable}
             setEditable={setEditable}
+            shouldRun={shouldRun}
+            setShouldRun={setShouldRun}
           /> */}
           <EmbedOptionsPanel
             shouldRun={shouldRun}
