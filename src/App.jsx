@@ -15,7 +15,7 @@ import "./App.css";
 
 function App() {
   const [embedMode, setEmbedMode] = useState(null);
-  const [shouldRun, setShouldRun] = useState(false)
+  const [shouldRun, setShouldRun] = useState(false);
   const [code, setCode] = useState(`(p) => {
     p.setup = function () {
       p.createCanvas(400, 400);
@@ -64,7 +64,7 @@ function App() {
     <>
       <div className="app-container">
         <Editor code={code} setCode={setCode} />
-        <Preview code={code} {shouldRun ? code : ""} />
+        <Preview code={shouldRun ? code : ""} />
       </div>
       <div className="embed-section">
         <div className="embed-option-wrapper">
@@ -78,7 +78,10 @@ function App() {
             editable={editable}
             setEditable={setEditable}
           /> */}
-          <EmbedOptionsPanel shouldRun={shouldRun} setShouldRun={setShouldRun} />
+          <EmbedOptionsPanel
+            shouldRun={shouldRun}
+            setShouldRun={setShouldRun}
+          />
         </div>
         <div className="embed-code-wrapper">
           <ModeButtonsGroup

@@ -69,15 +69,17 @@ const EmbedOptionsPanel = ({
   setAsset,
   editable,
   setEditable,
+  setShouldRun,
+  shouldRun,
 }) => {
   return (
     <Box sx={{ px: 2 }}>
       <EmbedOptions
-        label={shouldRun ? "play" : "pause"}
-        value={shouldRun}
+        label="Play Mode"
+        value={shouldRun ? "Play" : "Pause"}
         options={["Play", "Pause"]}
         onChange={(value) => {
-          if (value === play) {
+          if (value === "Play") {
             setShouldRun(true);
           } else {
             setShouldRun(false);

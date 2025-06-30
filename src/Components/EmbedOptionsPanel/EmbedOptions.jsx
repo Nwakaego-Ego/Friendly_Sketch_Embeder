@@ -50,7 +50,7 @@ const EmbedOptions = ({ label, value, options, onChange }) => {
         {label}:
       </Typography>
       <Typography variant="body2" sx={{ minWidth: 80, fontWeight: 500 }}>
-        {value}
+        {/* {value} */}
       </Typography>
       <FormControl fullWidth size="small" sx={{ minWidth: 120 }}>
         <InputLabel id={`${label}-label`}>{label}</InputLabel>
