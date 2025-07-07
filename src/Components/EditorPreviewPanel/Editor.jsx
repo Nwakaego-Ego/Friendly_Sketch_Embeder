@@ -8,13 +8,13 @@ const Editor = ({ code, setCode }) => {
         className="input-code"
         value={code}
         onChange={(e) => setCode(e.target.value)}
-        placeholder={`function setup() {
-  createCanvas(400, 400);
-}
+        // placeholder={`function setup() {
+        //   createCanvas(400, 400);
+        // }
 
-function draw() {
-  background(220);
-}`}
+        // function draw() {
+        //   background(220);
+        // }`}
       />
     </div>
   );

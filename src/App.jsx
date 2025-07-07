@@ -15,15 +15,13 @@ import "./App.css";
 function App() {
   const [embedMode, setEmbedMode] = useState(null);
   const [shouldRun, setShouldRun] = useState(false);
-  const [code, setCode] = useState(`(p) => {
-    p.setup = function () {
-      p.createCanvas(400, 400);
-    };
-    p.draw = function () {
-      p.background(220);
-      p.ellipse(p.width / 2, p.height / 2, 50, 50);
-    };
-  }`);
+  const [code, setCode] = useState(`function setup() {
+          createCanvas(400, 400);
+        }
+
+        function draw() {
+          background(220);
+        }`);
   const [copied, setCopied] = useState(false);
 
   // const [theme, setTheme] = useState("Dark");

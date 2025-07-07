@@ -33,12 +33,6 @@ const EmbedCodeBox = ({ embedCode }) => {
   return (
     <div className="code-box">
       <textarea readOnly value={embedCode} rows="10" className="code-box" />
-      {/* <button
-        onClick={handleCopy}
-        className="mt-2 px-4 py-2 bg-blue-600 text-white rounded"
-      >
-        {label}
-      </button> */}
     </div>
   );
 };

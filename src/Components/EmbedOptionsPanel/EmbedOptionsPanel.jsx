@@ -59,6 +59,7 @@ import EmbedOptions from "./EmbedOptions";
 import Box from "@mui/material/Box";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import PlayPauseButtons from "../EmbedOptionsPanel/PlayPauseButtons";
 
 const EmbedOptionsPanel = ({
   mode,
@@ -73,19 +74,51 @@ const EmbedOptionsPanel = ({
   shouldRun,
 }) => {
   return (
+    // <Box sx={{ px: 2 }}>
+    //   <EmbedOptions
+    //     label="Play Mode"
+    //     value={shouldRun ? "Play" : "Pause"}
+    //     options={["Play", "Pause"]}
+    //     onChange={(value) => {
+    //       if (value === "Play") {
+    //         setShouldRun(true);
+    //       } else {
+    //         setShouldRun(false);
+    //       }
+    //     }}
+    //   />
+    //   <EmbedOptions
+    //     label="Theme"
+    //     value={theme}
+    //     options={["Dark", "Light"]}
+    //     onChange={setTheme}
+    //   />
+    //   <EmbedOptions
+    //     label="Asset"
+    //     value={asset}
+    //     options={["Sound"]}
+    //     onChange={setAsset}
+    //   />
+    //   <Box sx={{ mt: 3 }}>
+    //     <FormControlLabel
+    //       control={
+    //         <Switch
+    //           checked={editable}
+    //           onChange={() => setEditable((prev) => !prev)}
+    //           color="primary"
+    //         />
+    //       }
+    //       label="Make Code Editable"
+    //     />
+    //   </Box>
+    // </Box>
+
     <Box sx={{ px: 2 }}>
-      <EmbedOptions
-        label="Play Mode"
-        value={shouldRun ? "Play" : "Pause"}
-        options={["Play", "Pause"]}
-        onChange={(value) => {
-          if (value === "Play") {
-            setShouldRun(true);
-          } else {
-            setShouldRun(false);
-          }
-        }}
-      />
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
+        <strong>Sketch Controls:</strong>
+        <PlayPauseButtons shouldRun={shouldRun} setShouldRun={setShouldRun} />
+      </Box>
+
       <EmbedOptions
         label="Theme"
         value={theme}
