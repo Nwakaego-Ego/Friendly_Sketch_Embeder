@@ -114,7 +114,7 @@ const EmbedOptionsPanel = ({
     // </Box>
 
     <Box sx={{ px: 2 }}>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2, mt: 4 }}>
         <strong>Sketch Controls:</strong>
         <PlayPauseButtons shouldRun={shouldRun} setShouldRun={setShouldRun} />
       </Box>

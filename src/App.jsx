@@ -16,12 +16,12 @@ function App() {
   const [embedMode, setEmbedMode] = useState(null);
   const [shouldRun, setShouldRun] = useState(false);
   const [code, setCode] = useState(`function setup() {
-          createCanvas(400, 400);
-        }
+  createCanvas(400, 400);
+}
 
-        function draw() {
-          background(220);
-        }`);
+function draw() {
+  background(220);
+}`);
   const [copied, setCopied] = useState(false);
 
   // const [theme, setTheme] = useState("Dark");

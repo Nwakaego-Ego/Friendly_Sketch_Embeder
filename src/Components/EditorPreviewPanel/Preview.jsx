@@ -1,32 +1,32 @@
-import React, { useEffect } from "react";
-import { generateInstanceEmbed } from "../../utils/EmbedUtils";
-import "./Preview.css";
+// import React, { useEffect } from "react";
+// import { generateInstanceEmbed } from "../../utils/EmbedUtils";
+// import "./Preview.css";
 
-const Preview = ({ code, shouldRun }) => {
-  const instanceWrapper = generateInstanceEmbed(code);
+// const Preview = ({ code, shouldRun }) => {
+//   const instanceWrapper = generateInstanceEmbed(code);
 
-  return (
-    <div>
-      {" "}
-      <iframe
-        srcDoc={`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-      </head>
-      <body>
-        <script>${code}</script>
-      </body>
-    </html>
-  `}
-        className="preview-box"
-      />
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       {" "}
+//       <iframe
+//         srcDoc={`
+//     <!DOCTYPE html>
+//     <html>
+//       <head>
+//         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+//       </head>
+//       <body>
+//         <script>${code}</script>
+//       </body>
+//     </html>
+//   `}
+//         className="preview-box"
+//       />
+//     </div>
+//   );
+// };
 
-export default Preview;
+// export default Preview;
 
 // import React from "react";
 // import Box from "@mui/material/Box";
@@ -70,3 +70,43 @@ export default Preview;
 // };
 
 // export default Preview;
+
+import React from "react";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import "./Preview.css";
+
+const Preview = ({ code }) => {
+  return (
+    <Box sx={{ px: 2, py: 0 }}>
+      <Paper
+        elevation={3}
+        sx={{
+          overflow: "hidden",
+          borderRadius: 1,
+          border: "1px solid #ccc",
+        }}
+      >
+        <iframe
+          title="Sketch Preview"
+          srcDoc={`<!DOCTYPE html>
+            <html>
+              <head>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+              </head>
+              <body>
+                <script>${code}</script>
+              </body>
+            </html>`}
+          style={{
+            width: "635px",
+            height: "283px",
+            border: "none",
+          }}
+        />
+      </Paper>
+    </Box>
+  );
+};
+
+export default Preview;
