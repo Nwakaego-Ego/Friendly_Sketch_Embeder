@@ -21,16 +21,17 @@ import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import "./Editor.css";
-export default function Editor({ code, setCode }) {
+export default function Editor({ code, setCode, theme }) {
+  const codeMirrorTheme = theme === "Dark" ? "dark" : "light";
+
   return (
-    <div className="editor-wrapper">
+    <div className="editor-wrapper editor">
       {" "}
-      {/* You can style this div if needed */}
       <CodeMirror
         value={code}
         height="290px"
         width="635px"
-        theme="light"
+        theme={codeMirrorTheme}
         extensions={[javascript()]}
         onChange={(value) => setCode(value)}
       />

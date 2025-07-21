@@ -74,45 +74,6 @@ const EmbedOptionsPanel = ({
   shouldRun,
 }) => {
   return (
-    // <Box sx={{ px: 2 }}>
-    //   <EmbedOptions
-    //     label="Play Mode"
-    //     value={shouldRun ? "Play" : "Pause"}
-    //     options={["Play", "Pause"]}
-    //     onChange={(value) => {
-    //       if (value === "Play") {
-    //         setShouldRun(true);
-    //       } else {
-    //         setShouldRun(false);
-    //       }
-    //     }}
-    //   />
-    //   <EmbedOptions
-    //     label="Theme"
-    //     value={theme}
-    //     options={["Dark", "Light"]}
-    //     onChange={setTheme}
-    //   />
-    //   <EmbedOptions
-    //     label="Asset"
-    //     value={asset}
-    //     options={["Sound"]}
-    //     onChange={setAsset}
-    //   />
-    //   <Box sx={{ mt: 3 }}>
-    //     <FormControlLabel
-    //       control={
-    //         <Switch
-    //           checked={editable}
-    //           onChange={() => setEditable((prev) => !prev)}
-    //           color="primary"
-    //         />
-    //       }
-    //       label="Make Code Editable"
-    //     />
-    //   </Box>
-    // </Box>
-
     <Box sx={{ px: 2 }}>
       <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2, mt: 4 }}>
         <strong>Sketch Controls:</strong>

@@ -69,6 +69,11 @@ export default function ModeButtonsGroup({
         onClick={() => setEmbedMode("global")}
       />
       <ModeButton
+        label="Wordpress"
+        isActive={embedMode === "wordpress"}
+        onClick={() => setEmbedMode("wordpress")}
+      />
+      <ModeButton
         label={copied ? "Copied" : "Copy Code"}
         isActive={false}
         onClick={handleCopy}

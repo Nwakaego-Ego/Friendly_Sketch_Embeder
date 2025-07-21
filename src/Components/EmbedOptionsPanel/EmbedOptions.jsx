@@ -37,7 +37,6 @@ const EmbedOptions = ({ label, value, options, onChange }) => {
         display: "flex",
         alignItems: "center",
         gap: 1,
-        bgcolor: "#f6f6f6",
         px: 2,
         py: 1,
         borderRadius: 2,

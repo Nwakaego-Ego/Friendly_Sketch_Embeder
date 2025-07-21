@@ -31,7 +31,7 @@ const EmbedCodeBox = ({ embedCode }) => {
   console.log(embedCode);
 
   return (
-    <div className="code-box">
+    <div className="">
       <textarea readOnly value={embedCode} rows="10" className="code-box" />
     </div>
   );

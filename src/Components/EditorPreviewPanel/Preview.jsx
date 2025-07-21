@@ -103,6 +103,7 @@ const Preview = ({ code }) => {
             height: "283px",
             border: "none",
           }}
+          className="preview"
         />
       </Paper>
     </Box>
