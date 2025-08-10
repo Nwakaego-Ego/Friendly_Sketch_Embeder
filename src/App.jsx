@@ -16,7 +16,7 @@ import {
 import "./App.css";
 
 function App() {
-  const [embedMode, setEmbedMode] = useState(null);
+  const [embedMode, setEmbedMode] = useState("instance");
   const [shouldRun, setShouldRun] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [code, setCode] = useState(`function setup() {
