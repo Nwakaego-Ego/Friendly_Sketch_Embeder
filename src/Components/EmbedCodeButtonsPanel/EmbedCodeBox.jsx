@@ -12,31 +12,45 @@
 
 // export default EmbedCodeBox;
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Button from "@mui/material/Button";
 import "./EmbedCodeBox.css";
 import {
   generateInstanceEmbed,
   generateGlobalEmbed,
   generateIframeEmbed,
+  generateWordPressEmbedCode,
 } from "../../utils/EmbedUtils";
 
-const EmbedCodeBox = ({ code, embedMode, embedCode }) => {
+const EmbedCodeBox = ({ code, embedMode, embedCode, editable, isActive }) => {
+  const [localEmbedCode, setLocalEmbedCode] = useState(embedCode);
+
+  useEffect(() => {
+    setLocalEmbedCode(embedCode);
+  }, [embedCode]);
+
   const openInCodePen = () => {
     let html = "";
 
-    if (mode === "instance") {
+    if (embedMode === "instance") {
       html = generateInstanceEmbed(code);
-    } else if (mode === "global") {
+    } else if (embedMode === "global") {
       html = generateGlobalEmbed(code);
-    } else if (mode === "iframe") {
+    } else if (embedMode === "iframe") {
       html = generateIframeEmbed(code);
+    } else if (embedMode === "wordpress") {
+      html = generateWordPressEmbedCode(code);
     }
 
+    // Build data object for CodePen
     const data = {
       title: "p5.js Sketch",
-      html,
+      html: html,
+      js: "", // optional, leave blank if all JS is inside HTML
+      css: "", // optional
     };
 
+    // Create a hidden form to POST data to CodePen
     const form = document.createElement("form");
     form.action = "https://codepen.io/pen/define";
     form.method = "POST";
@@ -55,24 +69,26 @@ const EmbedCodeBox = ({ code, embedMode, embedCode }) => {
 
   return (
     <div>
-      {/* <textarea
-        readOnly
-        value={generateEmbedPreview(userCode, mode)}
+      <textarea
+        readOnly={!editable}
+        value={localEmbedCode}
         rows="10"
         className="code-box"
-      /> */}
-      <textarea readOnly value={embedCode} rows="10" className="code-box" />
-      <button onClick={openInCodePen}>Open in CodePen</button>
+        onChange={(e) => editable && setLocalEmbedCode(e.target.value)}
+      />
+
+      {/* <button onClick={openInCodePen}>Open in CodePen</button> */}
+      <Button
+        variant={isActive ? "contained" : "outlined"}
+        color={embedMode === "wordpress" ? "primary" : "secondary"}
+        onClick={openInCodePen}
+      >
+        Open in CodePen
+      </Button>
     </div>
   );
 };
 
-// helper so textarea shows correct embed code preview
-function generateEmbedPreview(userCode, mode) {
-  if (mode === "instance") return generateInstanceEmbed(userCode);
-  if (mode === "global") return generateGlobalEmbed(userCode);
-  if (mode === "iframe") return generateIframeEmbed(userCode);
-  return "";
-}
-
 export default EmbedCodeBox;
+
+// // // code, embedcode and embedmode   the issue is how i am passiing this

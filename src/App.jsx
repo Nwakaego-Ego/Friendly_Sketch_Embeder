@@ -16,16 +16,42 @@ import {
 import "./App.css";
 
 function App() {
-  const [embedMode, setEmbedMode] = useState("instance");
+  const [embedMode, setEmbedMode] = useState("null");
   const [shouldRun, setShouldRun] = useState(false);
   const [theme, setTheme] = useState("dark");
-  const [code, setCode] = useState(`function setup() {
-  createCanvas(400, 400);
-}
+  const [editable, setEditable] = useState(false);
+  // const [code, setCode] = useState(() => {
+  //   return (
+  //     localStorage.getItem("lastSketch") ||
+  //     `function setup() {
+  //     createCanvas(400, 400);
+  //   }
 
-function draw() {
-  background(220);
-}`);
+  //   function draw() {
+  //     background(220);
+  //   }`
+  //   );
+  // });
+
+  const [code, setCode] = useState(() => {
+    const saved = localStorage.getItem("lastSketch");
+    if (!saved || saved === "null") {
+      // Default fallback sketch
+      return `function setup() {
+    createCanvas(400, 400);
+  }
+
+  function draw() {
+    background(220);
+  }`;
+    }
+    return saved;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("lastSketch", code);
+  }, [code]);
+
   const [copied, setCopied] = useState(false);
 
   const muiTheme = createTheme({
@@ -40,7 +66,8 @@ function draw() {
   }, [theme]);
 
   const embedCode = useMemo(() => {
-    if (!embedMode) return;
+    // if (!embedMode) return;
+    if (!embedMode || embedMode === "null") return "";
     if (embedMode === "instance") {
       return generateInstanceEmbed(code);
     } else if (embedMode === "global") {
@@ -81,6 +108,8 @@ function draw() {
               setShouldRun={setShouldRun}
               theme={theme}
               setTheme={setTheme}
+              editable={editable}
+              setEditable={setEditable}
             />
           </div>
           <div className="embed-code-wrapper">
@@ -97,6 +126,7 @@ function draw() {
               code={code}
               setEmbedMode={setEmbedMode}
               embedCode={embedCode}
+              editable={editable}
             />
           </div>
         </div>
