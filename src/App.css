@@ -8,7 +8,9 @@ body {
   font-family: sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .app-container {
@@ -65,4 +67,11 @@ body {
 .code-box {
   background-color: var(--code-box-bg);
   color: var(--text);
+}
+
+/* blur anything under the modal */
+.app-blurred {
+  filter: blur(3px);
+  pointer-events: none; /* prevent clicks behind modal */
+  user-select: none;
 }

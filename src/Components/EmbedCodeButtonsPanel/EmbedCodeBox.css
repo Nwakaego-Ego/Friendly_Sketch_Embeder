@@ -28,3 +28,18 @@
   border-color: #1e88e5;
   box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.4);
 }
+
+.instructions-panel {
+  background: #f6f6f6;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+.instructions-panel h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+.instructions-panel ol {
+  margin: 8px 0 0 18px;
+}
