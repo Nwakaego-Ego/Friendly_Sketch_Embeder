@@ -75,11 +75,11 @@ function App() {
 
           <div className="app-container">
             <div className="editor-preview-row">
+              <h4 className="step-1">
+                Step 1: Copy and paste your code into the editor below and preview your
+                sketch
+              </h4>
               <div>
-                <h4 className="step-1">
-                  Step 1: Copy and paste your code into the editor below and preview your
-                  sketch
-                </h4>
                 <Editor
                     code={code}
                     setCode={setCode}
