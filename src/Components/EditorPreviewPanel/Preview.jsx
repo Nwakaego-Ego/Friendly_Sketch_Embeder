@@ -119,13 +119,15 @@ import "./Preview.css";
 
 const Preview = ({ code, shouldRun }) => {
   return (
-    <Box sx={{ px: 2, py: 0 }}>
       <Paper
         elevation={3}
         sx={{
           overflow: "hidden",
           borderRadius: 1,
           border: "1px solid #ccc",
+            minHeight: '30vh',
+            // paddingTop: '25px',
+            // backgroundColor: '#eee',
         }}
       >
         {shouldRun ? (
@@ -135,14 +137,19 @@ const Preview = ({ code, shouldRun }) => {
               <html>
                 <head>
                   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+                  <style>
+                    body, html { padding: 0; margin: 0; height: 100%; width: 100%;}
+                    main { width: 100%; height: 100%; }
+                    canvas { width: 100%; height: 100%; }
+                  </style>
                 </head>
                 <body>
                   <script>${code}</script>
                 </body>
               </html>`}
             style={{
-              width: "635px",
-              height: "283px",
+                width: '100%',
+                height: '100%',
               border: "none",
             }}
             className="preview"
@@ -150,8 +157,8 @@ const Preview = ({ code, shouldRun }) => {
         ) : (
           <div
             style={{
-              width: "635px",
-              height: "283px",
+              width: "100%",
+              height: "100%",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -165,7 +172,6 @@ const Preview = ({ code, shouldRun }) => {
           </div>
         )}
       </Paper>
-    </Box>
   );
 };
 

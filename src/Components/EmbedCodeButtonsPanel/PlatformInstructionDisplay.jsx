@@ -78,12 +78,7 @@ export default function PlatformInstructionDisplay({ selectedPlatform }) {
 
   return (
     <div className="instructions-panel">
-      <textarea
-        readOnly
-        value={instructionsText}
-        rows={12}
-        className="code-box"
-      />
+      {instructionsText}
     </div>
   );
 }
