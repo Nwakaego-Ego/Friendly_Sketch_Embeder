@@ -184,3 +184,13 @@ body {
   pointer-events: none;
   user-select: none;
 }
+
+.project-title {
+  margin: 0;
+  text-align: center;
+  padding: 20px;
+}
+
+.step-1 {
+  margin: 0;
+}

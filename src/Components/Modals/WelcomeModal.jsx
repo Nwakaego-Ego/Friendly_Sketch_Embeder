@@ -101,7 +101,7 @@ export default function WelcomeModal({ isOpen, onClose }) {
 
           <Box>
             <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-              Embed, preview, and share your p5.js sketches easily
+              Embed, Preview, and Share your p5.js sketches easily
             </Typography>
             <DialogContentText id="welcome-dialog-description" sx={{ mt: 1 }}>
               This tool helps you embed your p5.js sketches into blogs,
