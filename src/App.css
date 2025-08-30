@@ -1,4 +1,4 @@
-/* 
+/*
 
 body {
   padding: 10px;
@@ -70,7 +70,7 @@ body {
 
 .app-blurred {
   filter: blur(3px);
-  pointer-events: none; 
+  pointer-events: none;
   user-select: none;
 }
 
@@ -79,6 +79,10 @@ body {
 
 
  */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   padding: 10px;
@@ -101,10 +105,18 @@ body {
 
 /* Row 1: Editor + Preview side by side */
 .editor-preview-row {
-  display: flex;
+  /*display: flex;*/
   gap: 20px;
-  justify-content: center;
-  align-items: flex-start;
+  /*justify-content: center;*/
+  /*align-items: flex-start;*/
+  display: grid;
+  grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+}
+
+@media (max-width: 800px) {
+  .editor-preview-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Each column stacks its own children */
@@ -192,5 +204,5 @@ body {
 }
 
 .step-1 {
-  margin: 0;
+  margin: 0 0 20px 0;
 }

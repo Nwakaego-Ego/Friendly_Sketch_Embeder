@@ -65,10 +65,7 @@ function App() {
   return (
     <div>
       <h2 className="project-title">P5.js Sketch Embedder Tool</h2>
-      <h4 className="step-1">
-        Step 1: Copy and paste your code into the editor below and preview your
-        sketch
-      </h4>
+
       <ThemeProvider theme={muiTheme}>
         <div className={`app-theme ${isModalOpen ? "app-blurred" : ""}`}>
           <WelcomeModal
@@ -78,16 +75,24 @@ function App() {
 
           <div className="app-container">
             <div className="editor-preview-row">
-              <div className="editor-column">
+              <div>
+                <h4 className="step-1">
+                  Step 1: Copy and paste your code into the editor below and preview your
+                  sketch
+                </h4>
                 <Editor
-                  code={code}
-                  setCode={setCode}
-                  theme={theme}
-                  shouldRun={shouldRun}
-                  setShouldRun={setShouldRun}
+                    code={code}
+                    setCode={setCode}
+                    theme={theme}
+                    shouldRun={shouldRun}
+                    setShouldRun={setShouldRun}
                 />
+              </div>
 
-                <EmbedCodeBox
+              <Preview code={code} shouldRun={shouldRun}/>
+
+
+              <EmbedCodeBox
                   code={code}
                   embedMode={embedMode}
                   embedCode={embedCode}
@@ -95,35 +100,15 @@ function App() {
                   handleCopy={handleCopy}
                   selectedPlatform={selectedPlatform}
                   setEmbedMode={setEmbedMode}
-                />
+              />
 
-                {/* <EmbedPlatformSelector
+
+              <EmbedPlatformSelector
                   embedMode={embedMode}
                   setEmbedMode={setEmbedMode}
                   selectedPlatform={selectedPlatform}
                   setSelectedPlatform={setSelectedPlatform}
-                /> */}
-              </div>
-
-              <div className="preview-column">
-                <Preview code={code} shouldRun={shouldRun} />
-
-                {/* <EmbedCodeBox
-                  code={code}
-                  embedMode={embedMode}
-                  embedCode={embedCode}
-                  copied={copied}
-                  handleCopy={handleCopy}
-                  selectedPlatform={selectedPlatform}
-                /> */}
-
-                <EmbedPlatformSelector
-                  embedMode={embedMode}
-                  setEmbedMode={setEmbedMode}
-                  selectedPlatform={selectedPlatform}
-                  setSelectedPlatform={setSelectedPlatform}
-                />
-              </div>
+              />
             </div>
           </div>
         </div>

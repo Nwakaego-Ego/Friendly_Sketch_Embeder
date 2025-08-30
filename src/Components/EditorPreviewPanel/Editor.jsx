@@ -76,8 +76,8 @@ export default function Editor({
       {/* CodeMirror editor */}
       <CodeMirror
         value={code}
-        height="290px"
-        width="635px"
+        height="35vh"
+        width="100%"
         theme={codeMirrorTheme}
         extensions={[javascript()]}
         onChange={(value) => setCode(value)}
