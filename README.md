@@ -79,9 +79,7 @@ npm start
 Now open http://localhost:3000/
  to use the app locally.
 
-📸 Screenshots
-
-(Add screenshots of your UI and previews here if possible — helps users understand instantly.)
+![Preview](public/screenshots/screenshot.PNG)
 
 🤝 Contributing
 

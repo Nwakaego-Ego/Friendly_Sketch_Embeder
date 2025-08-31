@@ -62,69 +62,6 @@ function App() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  //   return (
-  //     <div>
-  //       <h2 className="project-title">P5.js Sketch Embedder Tool</h2>
-
-  //       <ThemeProvider theme={muiTheme}>
-  //         <div className={`app-theme ${isModalOpen ? "app-blurred" : ""}`}>
-  //           <WelcomeModal
-  //             isOpen={isModalOpen}
-  //             onClose={() => setIsModalOpen(false)}
-  //           />
-
-  //           <div className="app-container">
-  //             <div className="editor-preview-row">
-  //               <h4 className="step-1">
-  //                 Step 1: Copy and paste your code into the editor below and preview your
-  //                 sketch
-  //               </h4>
-  //               <div>
-  //                 <Editor
-  //                     code={code}
-  //                     setCode={setCode}
-  //                     theme={theme}
-  //                     shouldRun={shouldRun}
-  //                     setShouldRun={setShouldRun}
-  //                 />
-  //               </div>
-
-  //               <Preview code={code} shouldRun={shouldRun}/>
-
-  //               <EmbedCodeBox
-  //                   code={code}
-  //                   embedMode={embedMode}
-  //                   embedCode={embedCode}
-  //                   copied={copied}
-  //                   handleCopy={handleCopy}
-  //                   selectedPlatform={selectedPlatform}
-  //                   setEmbedMode={setEmbedMode}
-  //                 />
-  //               </div>
-
-  //               <div className="preview-column">
-  //                 <Preview code={code} shouldRun={shouldRun} />
-
-  //                 {/* <EmbedPlatformSelector
-
-  //               /> */}
-
-  //               <EmbedPlatformSelector
-  //                   embedMode={embedMode}
-  //                   setEmbedMode={setEmbedMode}
-  //                   selectedPlatform={selectedPlatform}
-  //                   setSelectedPlatform={setSelectedPlatform}
-  //                 />
-  //               </div>
-  // =======
-  //               />
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </ThemeProvider>
-  //     </div>
-  //   );
-
   return (
     <div>
       <h2 className="project-title">P5.js Sketch Embedder Tool</h2>
@@ -163,6 +100,12 @@ function App() {
                 selectedPlatform={selectedPlatform}
                 setEmbedMode={setEmbedMode}
               />
+              <EmbedPlatformSelector
+                embedMode={embedMode}
+                setEmbedMode={setEmbedMode}
+                selectedPlatform={selectedPlatform}
+                setSelectedPlatform={setSelectedPlatform}
+              />
             </div>
 
             {/* <div className="preview-column"> */}
@@ -170,12 +113,12 @@ function App() {
 
             {/* <EmbedPlatformSelector /> */}
 
-            <EmbedPlatformSelector
+            {/* <EmbedPlatformSelector
               embedMode={embedMode}
               setEmbedMode={setEmbedMode}
               selectedPlatform={selectedPlatform}
               setSelectedPlatform={setSelectedPlatform}
-            />
+            /> */}
             {/* </div> */}
           </div>
         </div>

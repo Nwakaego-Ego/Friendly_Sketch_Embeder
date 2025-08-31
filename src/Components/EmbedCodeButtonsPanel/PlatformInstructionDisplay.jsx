@@ -11,53 +11,67 @@ const pretty = (p) =>
 
 const platformInstructions = {
   wordpress: [
-    "Add a 'Custom HTML' block in the editor.",
-    "Click the embed mode you want above (Instance recommended).",
-    "Copy the code from the box below and paste it into the block.",
+    "Open your post/page in the WordPress editor.",
+    "Add a 'Custom HTML' block.",
+    "Paste the CodePen embed link you copied.",
     "Update/Publish your page.",
   ],
   blogger: [
-    "Switch the post editor to HTML mode.",
-    "Pick an embed mode above.",
-    "Copy the code below and paste where you want the sketch.",
-    "Save/Publish your post.",
+    "Go to your Blogger post editor.",
+    "Switch to 'HTML view'.",
+    "Paste the CodePen embed link where you want it to appear.",
+    "Switch back to 'Compose view' to continue editing.",
+    "Publish your post.",
   ],
   medium: [
-    "Medium accepts iframes. Pick Iframe Mode above.",
-    "Copy the code below.",
-    "Use the Embed option and paste the iframe code.",
-    "Publish.",
+    "Open your Medium story draft.",
+    "Click on the `+` button click on `Add an embed`",
+    "Paste the CodePen link directly on a new line.",
+    "Medium will automatically convert it into an embed.",
+    "Publish your story.",
   ],
-  "p. website": [
-    "Open your page’s HTML.",
-    "Pick an embed mode above (Instance recommended).",
-    "Paste the code below where you want the sketch.",
-    "Save and deploy.",
+  website: [
+    "Open your website project files.",
+    "On codepen use the iframe mode",
+    "Paste the CodePen embed `<iframe>` code inside your HTML where you want the sketch.",
+    "Save the file and upload/deploy your website.",
   ],
   notion: [
-    "Use /Embed block in Notion.",
-    "Pick Iframe Mode above.",
-    "Copy the code below and paste into the embed block.",
+    "Open the Notion page where you want to embed.",
+    "Type /embed and choose 'Embed'.",
+    "Paste the CodePen link into the embed block.",
+    "Resize the block as needed.",
   ],
   squarespace: [
-    "Use a 'Code' block.",
-    "Pick an embed mode above (Iframe works well).",
-    "Paste the code below and save.",
+    "Edit the page or blog post in Squarespace.",
+    "Add a 'Code' block where you want the sketch.",
+    "Paste the CodePen embed link.",
+    "Save and publish the page.",
   ],
   webflow: [
-    "Use an 'Embed' component.",
-    "Pick an embed mode above.",
-    "Paste the code below and publish.",
+    "Open your Webflow project.",
+    "Drag an 'Embed' component into your page.",
+    "Paste the CodePen embed link.",
+    "Save and publish the site.",
   ],
   wix: [
-    "Add an Embed widget (Custom Embeds → Embed a Widget).",
-    "Pick an embed mode above.",
-    "Paste the code below.",
+    "Go to the Wix Editor.",
+    "Click 'Add' → 'Embed Code' → 'Embed a Widget'.",
+    "Paste the CodePen embed link.",
+    "Publish your site.",
   ],
   godaddy: [
-    "Add an HTML section to your page.",
-    "Pick the embed mode above.",
-    "Paste the code below and publish.",
+    "Log in to your GoDaddy website editor.",
+    "Go to the section where you want the embed.",
+    "Click 'Add Section' → 'HTML'.",
+    "Paste the CodePen embed link.",
+    "Save and publish the site.",
+  ],
+  codepen: [
+    "Click the 'Open in CodePen' button above.",
+    "Save to get the codepen link.",
+    "Click 'embed' ",
+    "On the code panel by your right, where you have <<<<<<Span `see the pen` ...copy the link .e.g https://codepen.io/Nwakaego/pen/qEOJLra  and use in any platform of your choice",
   ],
 };
 
@@ -76,9 +90,5 @@ export default function PlatformInstructionDisplay({ selectedPlatform }) {
     return header + body;
   }, [selectedPlatform, steps]);
 
-  return (
-    <div className="instructions-panel">
-      {instructionsText}
-    </div>
-  );
+  return <div className="instructions-panel">{instructionsText}</div>;
 }
