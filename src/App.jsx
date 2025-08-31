@@ -96,26 +96,10 @@ function App() {
                   selectedPlatform={selectedPlatform}
                   setEmbedMode={setEmbedMode}
                 />
-
-                {/* <EmbedPlatformSelector
-                  embedMode={embedMode}
-                  setEmbedMode={setEmbedMode}
-                  selectedPlatform={selectedPlatform}
-                  setSelectedPlatform={setSelectedPlatform}
-                /> */}
               </div>
 
               <div className="preview-column">
                 <Preview code={code} shouldRun={shouldRun} />
-
-                {/* <EmbedCodeBox
-                  code={code}
-                  embedMode={embedMode}
-                  embedCode={embedCode}
-                  copied={copied}
-                  handleCopy={handleCopy}
-                  selectedPlatform={selectedPlatform}
-                /> */}
 
                 <EmbedPlatformSelector
                   embedMode={embedMode}
