@@ -175,10 +175,6 @@ export default function EmbedPlatformSelector({
   return (
     <div>
       <h4>Step 2: Choose your platform</h4>
-      <Paper elevation={4} sx={{ p: 3, borderRadius: 3 }}>
-        <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-          Select a Platform
-        </Typography>
 
         <Grid
           container
@@ -208,7 +204,6 @@ export default function EmbedPlatformSelector({
         </Grid>
 
         <PlatformInstructionDisplay selectedPlatform={selectedPlatform} />
-      </Paper>
     </div>
   );
 }

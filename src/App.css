@@ -1,4 +1,4 @@
-/* 
+/*
 
 body {
   padding: 10px;
@@ -70,7 +70,7 @@ body {
 
 .app-blurred {
   filter: blur(3px);
-  pointer-events: none; 
+  pointer-events: none;
   user-select: none;
 }
 
@@ -79,6 +79,10 @@ body {
 
 
  */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   padding: 10px;
@@ -91,7 +95,6 @@ body {
     color 0.3s ease;
 }
 
-/* App container stacks rows (editor/preview row + controls row) */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -99,15 +102,20 @@ body {
   padding: 20px;
 }
 
-/* Row 1: Editor + Preview side by side */
 .editor-preview-row {
-  display: flex;
+  /*display: flex;*/
   gap: 20px;
-  justify-content: center;
-  align-items: flex-start;
+
+  display: grid;
+  grid-template-columns: calc(50% - 10px) calc(50% - 10px);
 }
 
-/* Each column stacks its own children */
+@media (max-width: 800px) {
+  .editor-preview-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .editor-column,
 .preview-column {
   display: flex;
@@ -117,19 +125,16 @@ body {
   min-width: 300px;
 }
 
-/* Controls row (dark mode + editable toggle) */
 .controls-row {
   display: flex;
   justify-content: flex-start;
   margin-top: 10px;
 }
 
-/* Keep your embed section if you need it for future */
 .embed-section {
   display: flex;
 }
 
-/* Existing styles */
 .embed-code-wrapper {
   margin-left: 56px;
   margin-top: 28px;
@@ -193,4 +198,11 @@ body {
 
 .step-1 {
   margin: 0;
+  grid-column: 1 / span 2;
+}
+
+@media (max-width: 800px) {
+  .step-1 {
+    grid-column: auto;
+  }
 }

@@ -55,7 +55,6 @@ export default function Editor({
 
   return (
     <div className="editor-wrapper">
-      {/* Play / Pause buttons above the editor */}
       <div className="play-pause-buttons">
         <button
           onClick={() => setShouldRun(true)}
@@ -73,11 +72,10 @@ export default function Editor({
         </button>
       </div>
 
-      {/* CodeMirror editor */}
       <CodeMirror
         value={code}
-        height="290px"
-        width="635px"
+        height="35vh"
+        width="100%"
         theme={codeMirrorTheme}
         extensions={[javascript()]}
         onChange={(value) => setCode(value)}
