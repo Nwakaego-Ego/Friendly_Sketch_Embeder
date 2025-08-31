@@ -165,18 +165,18 @@ function App() {
               />
             </div>
 
-            <div className="preview-column">
-              <Preview code={code} shouldRun={shouldRun} />
+            {/* <div className="preview-column"> */}
+            {/* <Preview code={code} shouldRun={shouldRun} /> */}
 
-              {/* <EmbedPlatformSelector /> */}
+            {/* <EmbedPlatformSelector /> */}
 
-              <EmbedPlatformSelector
-                embedMode={embedMode}
-                setEmbedMode={setEmbedMode}
-                selectedPlatform={selectedPlatform}
-                setSelectedPlatform={setSelectedPlatform}
-              />
-            </div>
+            <EmbedPlatformSelector
+              embedMode={embedMode}
+              setEmbedMode={setEmbedMode}
+              selectedPlatform={selectedPlatform}
+              setSelectedPlatform={setSelectedPlatform}
+            />
+            {/* </div> */}
           </div>
         </div>
       </ThemeProvider>
