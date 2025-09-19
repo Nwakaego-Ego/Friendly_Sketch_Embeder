@@ -121,7 +121,7 @@ body {
 
 .project-title {
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
   padding: 20px;
 }
 
@@ -134,4 +134,47 @@ body {
   .step-1 {
     grid-column: auto;
   }
+}
+
+.step {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ed225d;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-right: 10px;
+}
+
+.project-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.p5 {
+  position: relative;
+  display: inline-block;
+}
+
+.sup-five {
+  font-size: 0.7em;
+  vertical-align: super;
+  margin-left: 1px;
+  margin-right: 2px;
+}
+
+.star {
+  font-size: 14px;
+  color: #ed225d;
+  position: absolute;
+  top: -0.3em;
+  right: -0.9em;
 }

@@ -51,7 +51,9 @@ export default function EmbedCodeBox({
 
   return (
     <div>
-      <h4>Step 3: Choose your embed mode and copy code</h4>
+      <h4>
+        <span className="step">Step 2: </span>Choose your embed mode
+      </h4>
       <ModeButtonsGroup
         embedMode={embedMode}
         setEmbedMode={setEmbedMode}
