@@ -11,3 +11,8 @@
   border-radius: 4px;
   overflow: hidden;
 }
+
+.play-btn,
+.pause-btn {
+  color: #ed225d;
+}

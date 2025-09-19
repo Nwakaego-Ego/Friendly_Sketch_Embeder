@@ -8,6 +8,8 @@ import EmbedPlatformSelector from "./Components/EmbedCodeButtonsPanel/EmbedPlatf
 import EmbedCodeBox from "./Components/EmbedCodeButtonsPanel/EmbedCodeBox";
 import DarkModeEditableControls from "./Components/EmbedOptionsPanel/DarkModeEditableControls";
 import WelcomeModal from "./Components/Modals/WelcomeModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import {
   generateInstanceEmbed,
@@ -64,7 +66,13 @@ function App() {
 
   return (
     <div>
-      <h2 className="project-title">P5.js Sketch Embedder Tool</h2>
+      <h2 className="project-title">
+        <span className="p5">
+          P<span className="sup-five">5</span>
+          <FontAwesomeIcon icon={faStar} className="star" />
+        </span>
+        &nbsp; <span>Sketch Embedder Tool</span>
+      </h2>
 
       <ThemeProvider theme={muiTheme}>
         <div className={`app-theme ${isModalOpen ? "app-blurred" : ""}`}>
@@ -76,8 +84,11 @@ function App() {
           <div className="app-container">
             <div className="editor-preview-row">
               <h4 className="step-1">
-                Step 1: Copy and paste your code into the editor below and
-                preview your sketch
+                <span className="step">Step 1:</span>{" "}
+                <span className="step-guide">
+                  Copy and paste your code into the editor below and preview
+                  your sketch
+                </span>
               </h4>
               <div>
                 <Editor
@@ -107,19 +118,6 @@ function App() {
                 setSelectedPlatform={setSelectedPlatform}
               />
             </div>
-
-            {/* <div className="preview-column"> */}
-            {/* <Preview code={code} shouldRun={shouldRun} /> */}
-
-            {/* <EmbedPlatformSelector /> */}
-
-            {/* <EmbedPlatformSelector
-              embedMode={embedMode}
-              setEmbedMode={setEmbedMode}
-              selectedPlatform={selectedPlatform}
-              setSelectedPlatform={setSelectedPlatform}
-            /> */}
-            {/* </div> */}
           </div>
         </div>
       </ThemeProvider>

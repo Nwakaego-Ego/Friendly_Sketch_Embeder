@@ -22,7 +22,10 @@ export default function EmbedPlatformSelector({
 }) {
   return (
     <div>
-      <h4>Step 2: Choose your platform</h4>
+      <h4>
+        {" "}
+        <span className="step">Step 3:</span> Choose your platform
+      </h4>
 
       <Grid
         container

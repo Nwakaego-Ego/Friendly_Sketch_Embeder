@@ -71,7 +71,7 @@ const platformInstructions = {
     "Click the 'Open in CodePen' button above.",
     "Save to get the codepen link.",
     "Click 'embed' ",
-    "On the code panel by your right, where you have <<<<<<Span `see the pen` ...copy the link .e.g https://codepen.io/Nwakaego/pen/qEOJLra  and use in any platform of your choice",
+    "On the code panel by your right, where you have <<<<<<Span `see the pen`>>>>>>> ...copy the link .e.g https://codepen.io/Nwakaego/pen/qEOJLra  and use in any platform of your choice",
   ],
 };
 
