@@ -34,7 +34,19 @@ export default function EmbedCodeBox({
             ? generateWordPressEmbedCode(code)
             : generateIframeEmbed(code);
 
-    const data = { title: "p5.js Sketch", html, js: "", css: "" };
+    // const data = { title: "p5.js Sketch", html, js: "", css: "" };
+    const data = {
+      title: "p5.js Sketch",
+      html: `
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script>
+      ${code}
+    </script>
+  `,
+      js: "",
+      css: "",
+    };
+
     const form = document.createElement("form");
     form.action = "https://codepen.io/pen/define";
     form.method = "POST";
