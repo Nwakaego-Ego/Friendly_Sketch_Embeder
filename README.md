@@ -5,7 +5,7 @@
 A simple and user-friendly tool for generating clean **p5.js sketch embed codes** in multiple modes (Instance, Global, and WordPress).  
 With just a few clicks, you can create iframes and embed your sketches anywhere — blogs, docs, or personal websites.
 
-👉 **Live Demo on Netlify**: [P5 Sketch Embedder Tool](https://embeder.netlify.app)
+👉 **Live Demo on Netlify**: [P5 Sketch Embedder Tool](https://p5-sketch-embedder-tool.netlify.app/)
 
 ## Features
 
@@ -33,7 +33,7 @@ With just a few clicks, you can create iframes and embed your sketches anywhere 
 ## Demo
 
 Check out the live version here:  
-[Friendly Sketch Embedder on Netlify](https://embeder.netlify.app/)
+[Sketch Embedder on Netlify](https://p5-sketch-embedder-tool.netlify.app/)
 
 ---
 
